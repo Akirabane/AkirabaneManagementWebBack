@@ -1,6 +1,6 @@
-package fr.akirabane.AkirabaneManagementWebBack.dao;
+package fr.akirabane.AkirabaneManagementWebBack.compute.dao;
 
-import fr.akirabane.AkirabaneManagementWebBack.entity.PlayerEntity;
+import fr.akirabane.AkirabaneManagementWebBack.compute.entity.PlayerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,4 +16,5 @@ public interface IPlayerDao extends JpaRepository<PlayerEntity, Integer> {
     //find player by pseudo
     @Query("SELECT p FROM PlayerEntity p WHERE p.pseudo_player = ?1")
     Optional<PlayerEntity> findById(String pseudo_player);
+
 }
