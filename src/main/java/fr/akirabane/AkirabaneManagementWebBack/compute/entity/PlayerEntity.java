@@ -1,4 +1,4 @@
-package fr.akirabane.AkirabaneManagementWebBack.entity;
+package fr.akirabane.AkirabaneManagementWebBack.compute.entity;
 
 import javax.persistence.*;
 
@@ -17,19 +17,22 @@ public class PlayerEntity {
     @Column(nullable = false)
     private String uuid_player;
 
+    @Column(nullable = true)
+    private String password_player;
+
     @Column(nullable = false)
     private Boolean isStaff;
 
     public PlayerEntity() {
     }
 
-    public PlayerEntity(Integer id, String pseudo_player, String uuid_player, Boolean isStaff) {
+    public PlayerEntity(Integer id, String pseudo_player, String uuid_player, String password_player, Boolean isStaff) {
         this.id = id;
         this.pseudo_player = pseudo_player;
         this.uuid_player = uuid_player;
+        this.password_player = password_player;
         this.isStaff = isStaff;
     }
-
     public Integer getId() {
         return id;
     }
@@ -52,6 +55,14 @@ public class PlayerEntity {
 
     public void setUuid_player(String uuid_player) {
         this.uuid_player = uuid_player;
+    }
+
+    public String getPassword_player() {
+        return password_player;
+    }
+
+    public void setPassword_player(String password_player) {
+        this.password_player = password_player;
     }
 
     public Boolean getStaff() {

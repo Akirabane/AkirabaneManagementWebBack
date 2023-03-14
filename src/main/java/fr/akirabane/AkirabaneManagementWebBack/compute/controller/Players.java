@@ -1,8 +1,8 @@
-package fr.akirabane.AkirabaneManagementWebBack.controller;
+package fr.akirabane.AkirabaneManagementWebBack.compute.controller;
 
-import fr.akirabane.AkirabaneManagementWebBack.dto.in.PlayersDtoIn;
-import fr.akirabane.AkirabaneManagementWebBack.entity.PlayerEntity;
-import fr.akirabane.AkirabaneManagementWebBack.service.PlayersService;
+import fr.akirabane.AkirabaneManagementWebBack.compute.dto.in.PlayersDtoIn;
+import fr.akirabane.AkirabaneManagementWebBack.compute.service.PlayersService;
+import fr.akirabane.AkirabaneManagementWebBack.compute.entity.PlayerEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +25,7 @@ public class Players {
     public String addPlayer(@RequestBody PlayersDtoIn player) {
      playersService.addPlayer(player);
         //return data added
-        return "Joueur ajouté : " + player.getPseudo_player() + " " + player.getUuid_player() + " " + player.getStaff();
+        return "Joueur ajouté : " + player.getPseudo_player() + " " + player.getUuid_player() + " " + player.getPassword_player() + " " + player.getStaff();
     }
 
     @DeleteMapping("/apiv1/player/delete/{id}")
@@ -37,13 +37,25 @@ public class Players {
     @PutMapping("/apiv1/player/update/{id}")
     public String updatePlayer(@PathVariable Integer id, @RequestBody PlayersDtoIn player) {
         playersService.updatePlayer(player, id);
-        return "Joueur modifié: " + id + " " + player.getPseudo_player() + " " + player.getUuid_player() + " " + player.getStaff();
+        return "Joueur modifié: " + id + " " + player.getPseudo_player() + " " + player.getUuid_player() +  " " + player.getPassword_player() + " " + player.getStaff();
     }
 
     //get all players from repository
     @GetMapping("/apiv1/players")
     public Iterable<PlayerEntity> getAllPlayers() {
         return playersService.getAllPlayers();
+    }
+
+
+    @GetMapping("/privatePage")
+    public String privatePage(){
+        return "welcom to  private page Mr Akirabane ";
+    }
+
+
+    @GetMapping("/public")
+    public String publicpage(){
+        return "welcom to  public  page Mr Akirabane ";
     }
 
 }

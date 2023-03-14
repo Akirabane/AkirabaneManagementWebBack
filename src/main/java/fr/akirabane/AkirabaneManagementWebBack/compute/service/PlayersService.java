@@ -1,8 +1,8 @@
-package fr.akirabane.AkirabaneManagementWebBack.service;
+package fr.akirabane.AkirabaneManagementWebBack.compute.service;
 
-import fr.akirabane.AkirabaneManagementWebBack.dao.IPlayerDao;
-import fr.akirabane.AkirabaneManagementWebBack.dto.in.PlayersDtoIn;
-import fr.akirabane.AkirabaneManagementWebBack.entity.PlayerEntity;
+import fr.akirabane.AkirabaneManagementWebBack.compute.dao.IPlayerDao;
+import fr.akirabane.AkirabaneManagementWebBack.compute.dto.in.PlayersDtoIn;
+import fr.akirabane.AkirabaneManagementWebBack.compute.entity.PlayerEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
