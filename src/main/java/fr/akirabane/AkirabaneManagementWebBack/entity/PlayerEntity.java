@@ -1,7 +1,6 @@
-package fr.akirabane.TestSpringFS.entity;
+package fr.akirabane.AkirabaneManagementWebBack.entity;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Table(name = "players")

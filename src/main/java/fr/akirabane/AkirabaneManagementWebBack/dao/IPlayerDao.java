@@ -1,6 +1,6 @@
-package fr.akirabane.TestSpringFS.dao;
+package fr.akirabane.AkirabaneManagementWebBack.dao;
 
-import fr.akirabane.TestSpringFS.entity.PlayerEntity;
+import fr.akirabane.AkirabaneManagementWebBack.entity.PlayerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

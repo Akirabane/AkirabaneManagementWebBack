@@ -1,4 +1,4 @@
-package fr.akirabane.TestSpringFS.dto.out;
+package fr.akirabane.AkirabaneManagementWebBack.dto.out;
 
 public class PlayersDtoOut {
     private Integer id;

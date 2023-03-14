@@ -1,7 +1,7 @@
-package fr.akirabane.TestSpringFS.dto.in;
+package fr.akirabane.AkirabaneManagementWebBack.dto.in;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import fr.akirabane.TestSpringFS.entity.PlayerEntity;
+import fr.akirabane.AkirabaneManagementWebBack.entity.PlayerEntity;
 
 public class PlayersDtoIn {
     private Integer id;

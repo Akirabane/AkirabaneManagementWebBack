@@ -1,8 +1,8 @@
-package fr.akirabane.TestSpringFS.service;
+package fr.akirabane.AkirabaneManagementWebBack.service;
 
-import fr.akirabane.TestSpringFS.dao.IPlayerDao;
-import fr.akirabane.TestSpringFS.dto.in.PlayersDtoIn;
-import fr.akirabane.TestSpringFS.entity.PlayerEntity;
+import fr.akirabane.AkirabaneManagementWebBack.dao.IPlayerDao;
+import fr.akirabane.AkirabaneManagementWebBack.dto.in.PlayersDtoIn;
+import fr.akirabane.AkirabaneManagementWebBack.entity.PlayerEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

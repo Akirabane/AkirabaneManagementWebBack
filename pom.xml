@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.akirabane</groupId>
-	<artifactId>TestSpringFS</artifactId>
+	<artifactId>AkirabaneManagementWebBack</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TestSpringFS</name>
-	<description>Demo project for Spring Boot</description>
+	<description>AkirabaneManagementWebBack for my plugin akirabane management</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>

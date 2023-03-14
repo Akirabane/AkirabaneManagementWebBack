@@ -1,9 +1,8 @@
-package fr.akirabane.TestSpringFS.controller;
+package fr.akirabane.AkirabaneManagementWebBack.controller;
 
-import fr.akirabane.TestSpringFS.dto.in.PlayersDtoIn;
-import fr.akirabane.TestSpringFS.dto.out.PlayersDtoOut;
-import fr.akirabane.TestSpringFS.entity.PlayerEntity;
-import fr.akirabane.TestSpringFS.service.PlayersService;
+import fr.akirabane.AkirabaneManagementWebBack.dto.in.PlayersDtoIn;
+import fr.akirabane.AkirabaneManagementWebBack.entity.PlayerEntity;
+import fr.akirabane.AkirabaneManagementWebBack.service.PlayersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
