@@ -17,7 +17,7 @@ public class SecurityConfig {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     private AppUserService userDetailsService;
 
-    public  SecurityConfig(fr.akirabane.AkirabaneManagementWebBack.springsecurity.configuration.JwtAuthFilter jwtAuthFilter, AppUserService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder){
+    public  SecurityConfig(JwtAuthFilter jwtAuthFilter, AppUserService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder){
         JwtAuthFilter = jwtAuthFilter;
         this.userDetailsService = userDetailsService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
