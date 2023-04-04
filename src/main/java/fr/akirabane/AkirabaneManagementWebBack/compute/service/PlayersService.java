@@ -2,26 +2,25 @@ package fr.akirabane.AkirabaneManagementWebBack.compute.service;
 
 import fr.akirabane.AkirabaneManagementWebBack.compute.dao.IPlayerDao;
 import fr.akirabane.AkirabaneManagementWebBack.compute.dto.in.PlayersDtoIn;
+import fr.akirabane.AkirabaneManagementWebBack.compute.dto.mapper.PlayerDtoMapper;
+import fr.akirabane.AkirabaneManagementWebBack.compute.dto.out.PlayersDtoOut;
 import fr.akirabane.AkirabaneManagementWebBack.compute.entity.PlayerEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PlayersService {
+
+    private final PlayerDtoMapper playerDtoMapper;
 
     @Autowired
     IPlayerDao iplayerDao;
 
-    public PlayersService() {
-    }
-
-    public PlayerEntity getPlayerName(String pseudo) throws RuntimeException{
-        var player = iplayerDao.findById(pseudo);
-        if (player.isPresent()) {
-            return player.get();
-        } else {
-            throw new RuntimeException("Player not found");
-        }
+    public PlayersService(PlayerDtoMapper playerDtoMapper) {
+        this.playerDtoMapper = playerDtoMapper;
     }
 
     //add player to repository
@@ -65,7 +64,11 @@ public class PlayersService {
         iplayerDao.save(player1);
         }
 
-    public Iterable<PlayerEntity> getAllPlayers() {
-        return iplayerDao.findAll();
+    public List<PlayersDtoOut> getAllPlayers() {
+        return iplayerDao.findAll()
+                .stream()
+                .map(playerDtoMapper)
+                .collect(Collectors.toList());
+
     }
 }
