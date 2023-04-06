@@ -17,6 +17,9 @@ public class Players {
 
     @PostMapping("/apiv1/player/add")
     public String addPlayer(@RequestBody PlayersDtoIn player) {
+        if(player.getPassword_player() == null) {
+            throw new IllegalArgumentException("password_player cannot be null");
+        }
      playersService.addPlayer(player);
         //return data added
         return "Joueur ajouté : " + player.getPseudo_player() + " " + player.getUuid_player() + " " + player.getPassword_player() + " " + player.getStaff();

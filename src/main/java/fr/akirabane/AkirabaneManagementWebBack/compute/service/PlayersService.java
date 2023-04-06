@@ -71,4 +71,13 @@ public class PlayersService {
                 .collect(Collectors.toList());
 
     }
+
+    //get player by uuid (type string)
+    public PlayersDtoOut getPlayerByUuid(String uuid) {
+        var playerEntity = iplayerDao.findByUuid_player(uuid);
+        if (!playerEntity.isPresent()) {
+            throw new RuntimeException("Player not found");
+        }
+        return playerDtoMapper.apply(playerEntity.get());
+    }
 }

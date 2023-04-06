@@ -1,6 +1,7 @@
 package fr.akirabane.AkirabaneManagementWebBack.compute.dto.in;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import fr.akirabane.AkirabaneManagementWebBack.compute.entity.PlayerEntity;
 
 public class PlayersDtoIn {
