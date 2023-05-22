@@ -43,7 +43,7 @@ public class Players {
         return playersService.getAllPlayers();
     }
 
-
+/** Test de pages pour spring security **/
     @GetMapping("/privatePage")
     public String privatePage(){
         return "welcome to private page Mr Akirabane ";
