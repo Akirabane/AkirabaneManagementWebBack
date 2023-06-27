@@ -16,11 +16,11 @@ public class PlayersService {
 
     private final PlayerDtoMapper playerDtoMapper;
 
+    private final IPlayerDao iplayerDao;
     @Autowired
-    IPlayerDao iplayerDao;
-
-    public PlayersService(PlayerDtoMapper playerDtoMapper) {
+    public PlayersService(PlayerDtoMapper playerDtoMapper, IPlayerDao iplayerDao) {
         this.playerDtoMapper = playerDtoMapper;
+        this.iplayerDao = iplayerDao;
     }
 
     //add player to repository
@@ -43,8 +43,11 @@ public class PlayersService {
     }
 
     //delete player from repository
-    public void deletePlayer(Integer id) {
-        iplayerDao.deleteById(id);
+    public void deletePlayer(String uuid) {
+        if(uuid == null || uuid.trim().isEmpty() || (uuid.length() != 32 && uuid.length() != 36)) {
+            throw new RuntimeException("Player doesn't exist");
+        }
+        iplayerDao.deleteByUuid(uuid);
     }
 
     //update player from repository

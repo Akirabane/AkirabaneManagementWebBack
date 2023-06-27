@@ -17,4 +17,8 @@ public interface IPlayerDao extends JpaRepository<PlayerEntity, Integer> {
     @Query("SELECT p FROM PlayerEntity p WHERE p.pseudo_player = ?1")
     Optional<PlayerEntity> findById(String pseudo_player);
 
+    //delete player from it's UUID
+    @Query("DELETE FROM PlayerEntity p WHERE p.uuid_player = ?1")
+    void deleteByUuid(String uuid);
+
 }

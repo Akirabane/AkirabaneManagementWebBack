@@ -25,10 +25,10 @@ public class Players {
         return "Joueur ajouté : " + player.getPseudo_player() + " " + player.getUuid_player() + " " + player.getPassword_player() + " " + player.getStaff();
     }
 
-    @DeleteMapping("/apiv1/player/delete/{id}")
-    public String deletePlayer(@PathVariable Integer id) {
-        playersService.deletePlayer(id);
-        return "Joueur supprimé: " + id;
+    @DeleteMapping("/apiv1/player/delete")
+    public String deletePlayer(@RequestParam("uuid") String uuid) {
+        playersService.deletePlayer(uuid);
+        return "Joueur supprimé: " + uuid;
     }
 
     @PutMapping("/apiv1/player/update/{id}")
