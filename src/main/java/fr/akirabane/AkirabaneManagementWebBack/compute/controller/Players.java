@@ -43,6 +43,12 @@ public class Players {
         return playersService.getAllPlayers();
     }
 
+    //get player by pseudo
+    @GetMapping("/apiv1/player/pseudo/{pseudo}")
+    public PlayersDtoOut getPlayerByPseudo(@PathVariable String pseudo) {
+        return playersService.getPlayerByName(pseudo);
+    }
+
 /** Test de pages pour spring security **/
     @GetMapping("/privatePage")
     public String privatePage(){

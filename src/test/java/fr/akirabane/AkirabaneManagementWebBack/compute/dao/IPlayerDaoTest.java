@@ -13,4 +13,13 @@ class IPlayerDaoTest {
     @Test
     void findById() {
     }
+
+    @Test
+    void deleteByUuid() {
+    }
+
+    @Test
+    void findByPseudo() {
+    }
+
 }
