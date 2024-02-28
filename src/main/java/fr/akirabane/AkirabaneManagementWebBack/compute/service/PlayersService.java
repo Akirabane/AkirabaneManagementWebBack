@@ -83,4 +83,13 @@ public class PlayersService {
         }
         return playerDtoMapper.apply(playerEntity.get());
     }
+
+    //get player by Name (type string)
+    public PlayersDtoOut getPlayerByName(String name) {
+        var playerEntity = iplayerDao.findByPseudo_player(name);
+        if (!playerEntity.isPresent()) {
+            throw new RuntimeException("Player not found");
+        }
+        return playerDtoMapper.apply(playerEntity.get());
+    }
 }
